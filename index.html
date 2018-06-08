@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PasapalabraJS</title>
+	<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+	<link rel="stylesheet" href="styles/pasapalabra.css">
+</head>
+<body>
+	<h2>Pasapalabra <img src="https://d3c5s1hmka2e2b.cloudfront.net/uploads/topic/image/529/skylablogo.png" alt="">
+	</h2>
+
+	<div>
+		<ul id="rankingBox" class="redondaRanking changeScreen"></ul>
+	</div>
+
+	<div id="lettersContainer" class="changeDisplay">
+	<!-- 	<div class="redondas" id="0">
+			<h1>A</h1> 
+		</div> 
+		<div class="redondas" id="1">
+			<h1>B</h1>
+		</div> 
+		<div class="redondas" id="2">
+			<h1>C</h1>
+		</div> -->
+	</div>
+
+	<div id="rectangleQuestion" class="changeScreen"> 
+		<p id="welcomeUser"></p>	<!-- change class for rectangle --->
+		<p id="nameNewPlayer" class="changeScreen"></p>
+		<p id="thanks" class="changeScreen"></p>
+		<div id="questionsBox">
+			<h1>Reglas del Pasapalabra:</h1>
+			<div id="rules">
+				<ol>
+					<li>Para empezar el juego haz click en Start</li>
+					<li>Si quieres acabar el juego haz click en End Game</li>
+					<li>Escribe la respuesta en el recuadro y haz click en Validate
+						<ol class="noStyle" >
+							<li>3.1 Si la respuesta es correcta se marcara en verde</li>
+							<li>3.2 Si la respuesta es correcta se marcara en rojo</li>
+							<li>3.3 Si quieres pasar palabra escribe “pasapalabra” y se marcara en naranja</li>
+						</ol>
+					</li>
+					<li>Al final del juego se te mostrara la puntuación</li>
+					<li>Si quieres volver a jugar haz click en New Game</li>
+				</ol>
+				<p id="linkAlex">Si aún así no funciona, manda un mail a <a target="_blank" href="https://assets0.domestika.org/avatars/000/404/290/404290-original.jpg?1474282094">Alex@skylabfuckers.com
+				</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<div id="controls">
+	<div id="usersControls" class="changeScreen">
+		<button onclick="printQuestion()" >Start</button><br></br>
+	</div> 
+	<div id="usersControls1" class="changeScreen">
+		<button id="btn-end"onclick="endGame();" >End Game</button>
+	</div>
+</div>
+
+
+<input id="answer" type="text" placeholder="answer" class="changeScreen"/>
+<button id="validate" onclick="validateAnswer()" class="changeScreen"> Validate</button>
+
+<div id="buttonsFS">
+	<input id="Username" type="text" placeholder="username" /> <button onclick="pedirNombre()">New Game</button>
+</div>
+
+<div id ="rectangleRanking" class ="changeScreen">
+	<ul id="rankingBox2"></ul>
+</div>
+<div style="margin-left: 43%;">
+	<button id="newPlayer" onclick="newPlayerTest()"> New Player</button>
+</div>
+<script src="app/pasapalabra.js"></script>
+</body>
+</html>

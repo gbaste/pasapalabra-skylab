@@ -1,0 +1,258 @@
+*{
+
+	font-family: 'Bangers', cursive;
+
+
+}
+.redondas{
+
+	display: inline-block;
+	background-color: #b4abcc;
+	border: 2px solid white;
+	border-radius: 30px;
+	box-shadow: 1px 1px 1px black;
+	color: black;
+	margin-left: 25px;
+	height: 45px;
+	width: 45px;
+	padding: 4px 3px 1px 3px;
+	text-align: center;
+	line-height: 45px;
+}
+
+.redondaRanking{
+	border: 2px solid white;
+	border-radius: 50px;
+	box-shadow: 1px 1px 1px black;
+	color: #03740c;
+	font-size: 60px;
+	height: 70px;
+	width: 70px;
+	padding: 4px 3px 0px 2px;
+	margin-left: 70%
+
+}
+.changeScreen{
+
+	display: none;
+}
+.changeDisplay{
+
+	display: inline-block;
+}
+
+.colorGreen{
+
+	background-color: green;
+}
+
+.colorRed{
+
+	background-color: red;
+}
+
+.colorPasapalabra{
+
+	background-color: orange;
+
+}
+
+.rectangle {
+	height: 100%;
+	width: 60%;
+	border: solid 4px white;
+	margin-top: 300px;
+	margin-left: 300px;
+}
+.square {
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	margin-left: 500px;
+}
+
+.noStyle{
+
+	list-style:none;
+}
+
+p{
+	font-size: 35px;
+	line-height: 32px;
+}
+
+ol{
+
+	font-size: 25px;
+	line-height: 32px;
+}
+
+h2{
+
+	font-size: 80px;
+	text-align: center;
+
+}
+
+h1{
+
+	font-size: 25px;
+
+}
+
+
+body{
+
+	background-color: #34A8E0;
+
+}
+img{
+	width: 65px;
+}
+input{
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	font-size: 24px;
+	border-radius: 10px;
+}
+button{
+
+	width: 150px;
+	height: 40px;
+	text-align: center;
+	font-size: 24px;
+	border-radius: 10px;
+	margin-top: 15px;
+
+}
+
+#linkAlex{
+	font-size: 25px;
+	line-height: 32px;
+}
+
+#buttonsFS{
+	height: 100%;
+	font-size: 24px;
+	text-align: center;
+}
+
+#usersControls{
+	height: 100%;
+	font-size: 24px;
+	text-align: center;
+	margin-right: 10px;
+}
+
+#usersControls1{
+	height: 100%;
+	font-size: 24px;
+	text-align: center;
+}
+
+#controls{
+
+	display: inline-flex;
+	margin-left: 40%;
+}
+
+
+#lettersContainer{
+	height: 100%; 
+	/* width: 500px; */
+	/* justify-items: center; */
+	margin-left: 25%;
+	margin-right: 25%;
+	/* margin-right: 23%; */
+}
+
+#btn-end{
+
+	position: fixed;
+	bottom: 0px;
+	right: 0px; 
+}
+
+
+#rectangleQuestion{
+	margin:auto;
+	border-top-width: 4px;
+	margin-left: 20%;
+}
+
+#rectangleRanking{
+	height: 100%;
+	width: 15%;
+	border: solid 7px white;
+	/* margin-top: 0%; */
+	margin-left: 39%;
+}
+
+
+#questionsBox{
+
+	font-size: 35px;
+	padding: 20px;
+}
+
+#welcomeUser{
+	margin-left: 15px;
+	font-size: 35px;
+	margin-bottom: 30px;
+}
+
+#rankingBox{
+	text-align: center;
+	list-style-type: none;
+	margin-bottom: -1%;
+}
+
+
+.parpadea {
+
+	animation-name: parpadeo;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	-webkit-animation-name:parpadeo;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo{  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {  
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+
+
+
+/*
+.redondas{
+
+	height: 50px;
+    width: 50px;
+    /* display: initial; */
+    background-color: grey;
+    border-radius: 50%;
+    margin: 24px;
+    display: inline-block;
+    text-align: center;
+}
+*/
