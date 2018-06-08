@@ -243,6 +243,6 @@ function showRanking(){
 	document.getElementById("rankingBox2").classList.remove("changeScreen");
 
 }
-
+// pasapalabra
 
 showLetters()
