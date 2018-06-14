@@ -66,6 +66,16 @@
 <input id="answer" type="text" placeholder="answer" class="changeScreen"/>
 <button id="validate" onclick="validateAnswer()" class="changeScreen"> Validate</button>
 
+<script>
+var test = document.getElementById("answer");
+test.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("validate").click();
+    }
+});
+</script>
+
 <div id="buttonsFS">
 	<input id="Username" type="text" placeholder="username" /> <button onclick="pedirNombre()">New Game</button>
 </div>

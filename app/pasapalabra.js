@@ -27,61 +27,61 @@ var questions = [
 { letter: "x", answer: "botox", status: 0, question: ("CONTIENE LA X. Toxina bacteriana utilizada en cirujía estética") },
 { letter: "y", answer: "peyote", status: 0, question: ("CONTIENE LA Y. Pequeño cáctus conocido por sus alcaloides psicoactivos utilizado de forma ritual y medicinal por indígenas americanos") },
 { letter: "z", answer: "zen", status: 0, question: ("CON LA Z. Escuela de budismo que busca la experiencia de la sabiduría más allá del discurso racional") },
-]
+];
 
 
-var person = ''
-var id = 0
-var correct = 0
-var incorrect = 0
-var users = []
+var person = '';
+var id = 0;
+var correct = 0;
+var incorrect = 0;
+var users = [];
 
 
 function newPlayerTest(){
 
-	person = ''
-	id = 0
-	correct = 0
-	incorrect = 0
+	person = '';
+	id = 0;
+	correct = 0;
+	incorrect = 0;
 
 //cuando le damos al boton de NewPlayer reinicio los nodos de LI ya que si no en el ranking se repiten los resultados
-var test = document.getElementById("rankingBox2")
+var test = document.getElementById("rankingBox2");
 while (test.hasChildNodes()) {   
 	test.removeChild(test.firstChild);
 }
 
 document.getElementById("rectangleRanking").classList.add("changeScreen");
-document.getElementById("thanks").classList.add("changeScreen")
+document.getElementById("thanks").classList.add("changeScreen");
 document.getElementById("rankingBox2").classList.add("changeScreen");
 document.getElementById("nameNewPlayer").classList.remove("changeScreen");
-document.getElementById("nameNewPlayer").innerHTML = 'Intrduce el nombre del nuevo jugador'
-document.getElementById("rankingBox").classList.add("changeScreen")
-document.getElementById("lettersContainer").classList.remove("changeDisplay")
-document.getElementById("lettersContainer").classList.add("changeScreen")
-document.getElementById("validate").classList.add("changeScreen")
-document.getElementById("answer").classList.add("changeScreen")
+document.getElementById("nameNewPlayer").innerHTML = 'Intrduce el nombre del nuevo jugador';
+document.getElementById("rankingBox").classList.add("changeScreen");
+document.getElementById("lettersContainer").classList.remove("changeDisplay");
+document.getElementById("lettersContainer").classList.add("changeScreen");
+document.getElementById("validate").classList.add("changeScreen");
+document.getElementById("answer").classList.add("changeScreen");
 document.getElementById("buttonsFS").classList.remove("changeScreen");
 document.getElementById("usersControls1").classList.add("changeScreen");
-document.getElementById("Username").value = ""
+document.getElementById("Username").value = "";
 document.getElementById("newPlayer").classList.add("changeScreen");
 
 
 	//how to remove all class from list of DOM nodes
-	var elements =  [].slice.call(document.getElementsByClassName('redondas'))
+	var elements =  [].slice.call(document.getElementsByClassName('redondas'));
 	for(var i = 0; i < elements.length; i++){
-		elements[i].classList.remove('colorGreen')
-		elements[i].classList.remove('colorRed')
-		elements[i].classList.remove('colorPasapalabra')
-		elements[i].classList.remove('parpadea')
+		elements[i].classList.remove('colorGreen');
+		elements[i].classList.remove('colorRed');
+		elements[i].classList.remove('colorPasapalabra');
+		elements[i].classList.remove('parpadea');
 	}
 
 	questions.forEach(function(obj){
 		if(obj.status !== 0){
-			obj.status = 0
+			obj.status = 0;
 
 		}
 
-	})
+	});
 
 
 //return newPlayer();
@@ -94,16 +94,16 @@ document.getElementById("newPlayer").classList.add("changeScreen");
 }
 
 function pedirNombre(){ 
-	document.getElementById("welcomeUser").classList.remove("changeScreen")
-	document.getElementById("nameNewPlayer").classList.add("changeScreen")
+	document.getElementById("welcomeUser").classList.remove("changeScreen");
+	document.getElementById("nameNewPlayer").classList.add("changeScreen");
 	person = document.getElementById("Username").value;
-	document.getElementById("welcomeUser").innerHTML = 'Bienvenid@ ' + person
+	document.getElementById("welcomeUser").innerHTML = 'Bienvenid@ ' + person;
 	document.getElementById("buttonsFS").classList.add("changeScreen");
 	document.getElementById("usersControls").classList.remove("changeScreen");
 	document.getElementById("usersControls1").classList.remove("changeScreen");
-	document.getElementById("rectangleQuestion").classList.remove("changeScreen")
+	document.getElementById("rectangleQuestion").classList.remove("changeScreen");
 	document.getElementById("rectangleQuestion").classList.add("rectangle");
-	document.getElementById("lettersContainer").classList.remove("changeScreen")
+	document.getElementById("lettersContainer").classList.remove("changeScreen");
 //document.getElementById("questionsBox").classList.remove("changeScreen")
 
 //document.getElementById("questionBox").innerHTML = 'Bienvenido ' + person 
@@ -130,44 +130,44 @@ function showLetters(){
 		// añadimos el texto al nodo h1
 		btn.appendChild(t);
 		//añadimos al final del id redondas y seteamos como atributo el id => 0,1,2,3....
-		document.getElementById('lettersContainer').appendChild(btn).setAttribute("id", index)
-	})
-	document.getElementById("newPlayer").classList.add("changeScreen")
+		document.getElementById('lettersContainer').appendChild(btn).setAttribute("id", index);
+	});
+	document.getElementById("newPlayer").classList.add("changeScreen");
 }
 
 
 function validateAnswer(){
-	console.log('Esta es la var ID ' + id)
-	var answer = document.getElementById("answer").value
-	answer = answer.toLowerCase()
-	document.getElementById(id).classList.remove('parpadea')
+	console.log('Esta es la var ID ' + id);
+	var answer = document.getElementById("answer").value;
+	answer = answer.toLowerCase();
+	document.getElementById(id).classList.remove('parpadea');
 	if(answer === questions[id].answer){
 		console.log('correcto');
 		document.getElementById(id).classList.add("colorGreen");
 		document.getElementById(id).classList.remove("colorPasapalabra");
-		correct++
-		questions[id].status = 1
-		id++
+		correct++;
+		questions[id].status = 1;
+		id++;
 	} else if (answer === "pasapalabra"){
 		document.getElementById(id).classList.add("colorPasapalabra");
 		console.log('pasapalabra');
-		id++
+		id++;
 	} else if (answer !== questions[id].answer){
 		console.log('incorrecto');
 		document.getElementById(id).classList.add("colorRed");
 		document.getElementById(id).classList.remove("colorPasapalabra");
-		incorrect++
-		questions[id].status = 1
-		id++
+		incorrect++;
+		questions[id].status = 1;
+		id++;
 	}
 
-	var result = correct + incorrect
+	var result = correct + incorrect;
 
 	if(result === questions.length){
-		console.log(person + ' - ' + correct + ' aciertos')
+		console.log(person + ' - ' + correct + ' aciertos');
 		return endGame();
 	}
-	document.getElementById('answer').value = ""
+	document.getElementById('answer').value = "";
 	return printQuestion();
 }
 
@@ -175,69 +175,69 @@ function printQuestion(){
 	
 	document.getElementById("nameNewPlayer").classList.add("changeScreen");
 	document.getElementById("questionsBox").classList.remove("changeScreen");
-	document.getElementById('answer').value = ""
-	document.getElementById("rankingBox").classList.remove("changeScreen")
-	document.getElementById("validate").classList.remove("changeScreen")
-	document.getElementById("answer").classList.remove("changeScreen")
-	document.getElementById("usersControls").classList.add("changeScreen")
-	document.getElementById("welcomeUser").classList.add("changeScreen")
-	document.getElementById("rankingBox").innerHTML = correct
+	document.getElementById('answer').value = "";
+	document.getElementById("rankingBox").classList.remove("changeScreen");
+	document.getElementById("validate").classList.remove("changeScreen");
+	document.getElementById("answer").classList.remove("changeScreen");
+	document.getElementById("usersControls").classList.add("changeScreen");
+	document.getElementById("welcomeUser").classList.add("changeScreen");
+	document.getElementById("rankingBox").innerHTML = correct;
 
 	//document.getElementById(id).classList.add("parpadea")
 
 	if(id === questions.length){
-		id = 0
+		id = 0;
 	}
 	if (questions[id].status !== 0){
-		id++
+		id++;
 		return printQuestion();
 	} else if (questions[id].status === 0) { 
-		console.log('calling....')
-		document.getElementById("questionsBox").innerHTML = questions[id].question
-		document.getElementById(id).classList.add("parpadea")
+		console.log('calling....');
+		document.getElementById("questionsBox").innerHTML = questions[id].question;
+		document.getElementById(id).classList.add("parpadea");
 	}
-};
+}
 
 function endGame(){
-	document.getElementById("usersControls").classList.add("changeScreen")
-	document.getElementById("welcomeUser").classList.add("changeScreen")
-	document.getElementById("rankingBox").classList.add("changeScreen")
-	document.getElementById("questionsBox").classList.add("changeScreen")
-	document.getElementById("thanks").classList.remove("changeScreen")
-	document.getElementById("thanks").innerHTML = 'Gracias por jugar!'
-	document.getElementById("rankingBox").innerHTML = correct
-	document.getElementById("lettersContainer").classList.remove("changeDisplay")
-	document.getElementById("lettersContainer").classList.add("changeScreen")
-	document.getElementById("validate").classList.add("changeScreen")
-	document.getElementById("answer").classList.add("changeScreen")
+	document.getElementById("usersControls").classList.add("changeScreen");
+	document.getElementById("welcomeUser").classList.add("changeScreen");
+	document.getElementById("rankingBox").classList.add("changeScreen");
+	document.getElementById("questionsBox").classList.add("changeScreen");
+	document.getElementById("thanks").classList.remove("changeScreen");
+	document.getElementById("thanks").innerHTML = 'Gracias por jugar!';
+	document.getElementById("rankingBox").innerHTML = correct;
+	document.getElementById("lettersContainer").classList.remove("changeDisplay");
+	document.getElementById("lettersContainer").classList.add("changeScreen");
+	document.getElementById("validate").classList.add("changeScreen");
+	document.getElementById("answer").classList.add("changeScreen");
 	document.getElementById("usersControls1").classList.add("changeScreen");
 	document.getElementById("newPlayer").classList.remove("changeScreen");
-	document.getElementById('Username').value = ""
+	document.getElementById('Username').value = "";
 	return showRanking();
 }
 
 function showRanking(){
 	//document.getElementById("rankingBox").innerHTML = person + ' your correct answer => ' + correct
 	function user(username, puntuacion){
-		this.username = username
-		this.puntuacion = puntuacion
+		this.username = username;
+		this.puntuacion = puntuacion;
 	}
 
-	var newUser = new user(person, correct)
-	users.push(newUser)
+	var newUser = new user(person, correct);
+	users.push(newUser);
 
 	var ranking = users.sort(function(a,b){
-		return b.puntuacion-a.puntuacion
-	})
+		return b.puntuacion-a.puntuacion;
+	});
 	//return user();
 	ranking.forEach(function(user){
-		var li =document.createElement('li')
+		var li =document.createElement('li');
 		var text = document.createTextNode(user.username + ' - ' + user.puntuacion + ' points');
-		li.appendChild(text)
-		document.getElementById("rankingBox2").value = ''
-		return document.getElementById("rankingBox2").appendChild(li)
+		li.appendChild(text);
+		document.getElementById("rankingBox2").value = '';
+		return document.getElementById("rankingBox2").appendChild(li);
 
-	})
+	});
 
 	document.getElementById("rectangleRanking").classList.remove("changeScreen");
 	document.getElementById("rankingBox2").classList.remove("changeScreen");
@@ -245,4 +245,4 @@ function showRanking(){
 }
 // pasapalabra
 
-showLetters()
+showLetters();
